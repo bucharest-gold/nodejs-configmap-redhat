@@ -106,15 +106,15 @@ objects:
         spec:
           volumes:
             - configMap:
-                name: app-config
-                items:
-                  - key: app-config.yml
-                    path: app-config.yml
-              name: config
+              name: app-config
+              items:
+              - key: "app-config.yml"
+                path: "app-config.yml"
+            name: config
           containers:
             - env:
-                - name: NODE_CONFIGMAP_PATH
-                  value: /app/config/app-config.yml
+              - name: NODE_CONFIGMAP_PATH
+                value: /app/config/app-config.yml
               readinessProbe:
                 httpGet:
                   path: /api/health/readiness
