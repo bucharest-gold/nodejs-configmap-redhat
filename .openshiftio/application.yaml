@@ -6,9 +6,19 @@ metadata:
     description: This template creates a Build Configuration using an S2I builder.
     tags: instant-app
 parameters:
+  - name: SUFFIX_NAME
+    description: The suffix name for the template objects
+    displayName: Suffix name
+    value: ''
+  - name: RELEASE_VERSION
+    description: The release version number of application
+    displayName: Release version
+    value: 1.3.0
+    required: true
   - name: SOURCE_REPOSITORY_URL
     description: The source URL for the application
     displayName: Source URL
+    value: 'https://github.com/nodeshift-starters/nodejs-configmap-redhat'
     required: true
   - name: SOURCE_REPOSITORY_REF
     description: The branch name for the application
@@ -45,12 +55,12 @@ objects:
   - apiVersion: v1
     kind: BuildConfig
     metadata:
-      name: nodejs-configmap-redhat
+      name: 'nodejs-configmap-redhat${SUFFIX_NAME}'
     spec:
       output:
         to:
           kind: ImageStreamTag
-          name: 'nodejs-configmap-redhat:latest'
+          name: 'nodejs-configmap-redhat:${RELEASE_VERSION}'
       postCommit: {}
       resources: {}
       source:
@@ -86,35 +96,35 @@ objects:
         project: nodejs-configmap-redhat
         provider: nodeshift
     metadata:
-      name: nodejs-configmap-redhat
+      name: 'nodejs-configmap-redhat${SUFFIX_NAME}'
       labels:
         provider: nodeshift
         expose: 'true'
         project: nodejs-configmap-redhat
-        version: 1.3.0
+        version: '${RELEASE_VERSION}'
   - apiVersion: v1
     kind: DeploymentConfig
     metadata:
-      name: nodejs-configmap-redhat
+      name: 'nodejs-configmap-redhat${SUFFIX_NAME}'
       labels:
         app: nodejs-configmap-redhat
         provider: nodeshift
         project: nodejs-configmap-redhat
-        version: 1.3.0
+        version: '${RELEASE_VERSION}'
     spec:
       template:
         spec:
           volumes:
             - configMap:
-              name: app-config
-              items:
-              - key: "app-config.yml"
-                path: "app-config.yml"
-            name: config
+                name: app-config
+                items:
+                  - key: app-config.yml
+                    path: app-config.yml
+              name: config
           containers:
             - env:
-              - name: NODE_CONFIGMAP_PATH
-                value: /app/config/app-config.yml
+                - name: NODE_CONFIGMAP_PATH
+                  value: /app/config/app-config.yml
               readinessProbe:
                 httpGet:
                   path: /api/health/readiness
@@ -127,7 +137,7 @@ objects:
                   scheme: HTTP
                 initialDelaySeconds: 60
                 periodSeconds: 30
-              image: nodejs-configmap-redhat
+              image: 'nodejs-configmap-redhat:${RELEASE_VERSION}'
               name: nodejs-configmap-redhat
               securityContext:
                 privileged: false
@@ -143,7 +153,7 @@ objects:
             app: nodejs-configmap-redhat
             project: nodejs-configmap-redhat
             provider: nodeshift
-            version: 1.3.0
+            version: '${RELEASE_VERSION}'
       replicas: 1
       selector:
         app: nodejs-configmap-redhat
@@ -158,18 +168,18 @@ objects:
               - nodejs-configmap-redhat
             from:
               kind: ImageStreamTag
-              name: 'nodejs-configmap-redhat:latest'
+              name: 'nodejs-configmap-redhat${SUFFIX_NAME}:${RELEASE_VERSION}'
   - apiVersion: v1
     kind: Route
     spec:
       to:
         kind: Service
-        name: nodejs-configmap-redhat
+        name: 'nodejs-configmap-redhat${SUFFIX_NAME}'
       port:
         targetPort: 8080
     metadata:
-      name: nodejs-configmap-redhat
+      name: 'nodejs-configmap-redhat${SUFFIX_NAME}'
       labels:
         provider: nodeshift
         project: nodejs-configmap-redhat
-        version: 1.3.0
+        version: '${RELEASE_VERSION}'
