@@ -77,8 +77,8 @@ setInterval(() => {
         logger.level = config.level.toLowerCase();
       }
     }
-  }).catch(err => {
-    logger.error('Error getting config', err);
+  }).catch(error => {
+    logger.error('Error getting config', error);
   });
 }, 2000);
 
