@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.4.0](https://github.com/nodeshift-starters/nodejs-configmap-redhat/compare/v1.3.0...v1.4.0) (2019-04-16)
+
+
+### Features
+
+* Mount ConfigMaps as a Volume. ([#69](https://github.com/nodeshift-starters/nodejs-configmap-redhat/issues/69)) ([99e91c5](https://github.com/nodeshift-starters/nodejs-configmap-redhat/commit/99e91c5))
+
+
+
 <a name="1.3.0"></a>
 # [1.3.0](https://github.com/nodeshift-starters/nodejs-configmap-redhat/compare/v1.2.3...v1.3.0) (2018-11-16)
 
