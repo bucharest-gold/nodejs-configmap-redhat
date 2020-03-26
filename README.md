@@ -4,7 +4,7 @@
 # nodejs-configmap-redhat
 This project demonstrates application and runtime configuration leveraging external configuration sources
 
-http://appdev.openshift.io/docs/nodejs-runtime.html
+https://access.redhat.com/documentation/en-us/red_hat_build_of_node.js/
 
 ## Running The Example
 
