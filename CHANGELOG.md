@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.0](https://github.com/nodeshift-starters/nodejs-configmap-redhat/compare/v3.0.1...v4.0.0) (2020-11-27)
+
+
+### Features
+
+* upgrade tape from 4.13.2 to 5.0.1 ([#109](https://github.com/nodeshift-starters/nodejs-configmap-redhat/issues/109)) ([97b55bb](https://github.com/nodeshift-starters/nodejs-configmap-redhat/commit/97b55bbf4437ad2966ec67871f0b8da1b14051c1))
+
+
+### Bug Fixes
+
+* package.json & package-lock.json to reduce vulnerabilities ([#104](https://github.com/nodeshift-starters/nodejs-configmap-redhat/issues/104)) ([58dfb4a](https://github.com/nodeshift-starters/nodejs-configmap-redhat/commit/58dfb4aa841192ac8f2ad6cbf23a8cd5c2adce6d))
+* package.json & package-lock.json to reduce vulnerabilities ([#106](https://github.com/nodeshift-starters/nodejs-configmap-redhat/issues/106)) ([d0d3541](https://github.com/nodeshift-starters/nodejs-configmap-redhat/commit/d0d354105856f976a16954bdae4120421e8577ba))
+* upgrade coveralls from 3.0.9 to 3.0.11 ([#100](https://github.com/nodeshift-starters/nodejs-configmap-redhat/issues/100)) ([0d92663](https://github.com/nodeshift-starters/nodejs-configmap-redhat/commit/0d92663caa1468e836618b8c50919af1545ea174))
+* upgrade debug from 4.1.1 to 4.2.0 ([#102](https://github.com/nodeshift-starters/nodejs-configmap-redhat/issues/102)) ([ef79f01](https://github.com/nodeshift-starters/nodejs-configmap-redhat/commit/ef79f0134f89fd221f2b3ca6669a155917b8b4aa))
+* upgrade js-yaml from 3.13.1 to 3.14.0 ([#103](https://github.com/nodeshift-starters/nodejs-configmap-redhat/issues/103)) ([7ec3792](https://github.com/nodeshift-starters/nodejs-configmap-redhat/commit/7ec3792ff8c74572fad70696080feef4ff93321a))
+* upgrade kube-probe from 0.4.0 to 0.5.0 ([#113](https://github.com/nodeshift-starters/nodejs-configmap-redhat/issues/113)) ([76f3fbb](https://github.com/nodeshift-starters/nodejs-configmap-redhat/commit/76f3fbbcbfaa1b136524a2054250258666e79106))
+* upgrade nodeshift from 6.0.2 to 6.2.0 ([#111](https://github.com/nodeshift-starters/nodejs-configmap-redhat/issues/111)) ([ea346d8](https://github.com/nodeshift-starters/nodejs-configmap-redhat/commit/ea346d814cc3a5cbe96b1301b7e74a764ec8c09c))
+* upgrade winston from 3.2.1 to 3.3.2 ([#112](https://github.com/nodeshift-starters/nodejs-configmap-redhat/issues/112)) ([34301c0](https://github.com/nodeshift-starters/nodejs-configmap-redhat/commit/34301c0aae6b407507fc7bdafc5d3471d0d23153))
+
 ### [3.0.1](https://github.com/nodeshift-starters/nodejs-configmap-redhat/compare/v3.0.0...v3.0.1) (2020-04-27)
 
 ## [3.0.0](https://github.com/nodeshift-starters/nodejs-configmap-redhat/compare/v2.2.1...v3.0.0) (2020-01-24)
